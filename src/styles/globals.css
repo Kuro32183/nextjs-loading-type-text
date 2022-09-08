@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.loader {
+    position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+        overflow: hidden;
+    }
+    body {
+        color: white;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .loader {
+        position: relative;
+        -webkit-box-reflect: below -28px linear-gradient(transparent, #0002);
+    }
+    .loader::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: white;
+        animation: blinkCursor 0.8s steps(3) 1;
+    }
+    @keyframes blinkCursor {
+        0%,
+        75% {
+            opacity: 1;
+        }
+        76%,
+        100% {
+            opacity: 0;
+        }
+    }
+    .loader h2 {
+        position: relative;
+        color: white;
+        letter-spacing: 5px;
+        font-size: 4em;
+        text-transform: uppercase;
+        animation: typing 6s steps(10) infinite;
+        overflow: hidden;
+    }
+    @keyframes typing {
+        0%,
+        100% {
+            width: 0;
+        }
+        30%,
+        60% {
+            width: 415px;
+        }
+    }
+}
